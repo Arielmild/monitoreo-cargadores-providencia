@@ -1,0 +1,66 @@
+name: Monitoreo Ministerio - Providencia
+
+on:
+  schedule:
+    # Dos minutos después del cron del otro monitor; ambos siguen siendo independientes.
+    - cron: '4-59/5 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'ministerio/**'
+      - '!ministerio/datos/**'
+      - '.github/workflows/ministerio.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitoreo-ministerio
+  cancel-in-progress: false
+
+jobs:
+  capturar:
+    if: github.event.repository.private == false && github.repository == 'Arielmild/monitoreo-cargadores-providencia'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: ministerio
+    steps:
+      - name: Descargar la versión más reciente de main
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Configurar Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+      - name: Comprobar el procesamiento de la API
+        run: python -m unittest discover -s tests -v
+      - name: Capturar conectores del Ministerio
+        run: python monitor_providencia.py
+      - name: Guardar solo los datos del Ministerio
+        working-directory: .
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- ministerio/datos/
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "datos ministerio: captura UTC $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          for intento in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            # El otro monitor puede haber publicado mientras se hacía esta captura.
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1

@@ -1,6 +1,15 @@
 # Monitoreo de cargadores de Providencia
 
-Capturas automáticas de la API pública utilizada por [Dónde Cargo](https://dondecargo.cl/), mediante GitHub Actions. No requiere mantener un computador encendido ni instalar dependencias de Python.
+El monitor original realiza capturas automáticas de la API pública utilizada por [Dónde Cargo](https://dondecargo.cl/), mediante GitHub Actions, sin mantener un computador encendido ni instalar dependencias de Python.
+
+El segundo monitor consulta [cargadorespublicos.cl](https://cargadorespublicos.cl/) y está documentado en [ministerio/README.md](ministerio/README.md). Ambos pueden funcionar en paralelo en este repositorio:
+
+| Fuente | Workflow en Actions | Datos |
+| --- | --- | --- |
+| Dónde Cargo | Monitoreo Cargadores Providencia | `datos/` |
+| Cargadores Públicos del Ministerio | Monitoreo Ministerio - Providencia | `ministerio/datos/` |
+
+Las instrucciones siguientes corresponden al monitor original de Dónde Cargo.
 
 ## Consultar o descargar los datos
 
