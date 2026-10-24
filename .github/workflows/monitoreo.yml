@@ -1,9 +1,6 @@
 name: Monitoreo Cargadores Providencia
 
 on:
-  schedule:
-    # Cada cinco minutos, desplazado dos minutos respecto del inicio de la hora.
-    - cron: '3-58/5 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
