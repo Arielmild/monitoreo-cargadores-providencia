@@ -1,0 +1,10 @@
+{
+  "supabase_url": "https://cmyyoslcmkxgnyswnqoy.supabase.co",
+  "supabase_anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNteXlvc2xjbWt4Z255c3ducW95Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ5NjI0NzAsImV4cCI6MjA4MDUzODQ3MH0.bv88yKYKyH06lxTOp_o5Oq_mgXS2xrNHTBrlsZ4ADuk",
+  "bounding_box": {
+    "lat_min": -33.456,
+    "lat_max": -33.408,
+    "lon_min": -70.638,
+    "lon_max": -70.582
+  }
+}

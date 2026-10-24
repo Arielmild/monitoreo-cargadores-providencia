@@ -1,0 +1,59 @@
+name: Monitoreo Cargadores Providencia
+
+on:
+  schedule:
+    # Cada cinco minutos, desplazado dos minutos respecto del inicio de la hora.
+    - cron: '2-57/5 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - monitor_cloud.py
+      - config.json
+      - .github/workflows/monitoreo.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitoreo-cargadores
+  cancel-in-progress: false
+
+jobs:
+  recolectar-datos:
+    # Evita consumir minutos privados si alguien cambia la visibilidad o usa un fork.
+    if: github.event.repository.private == false && github.repository == 'Arielmild/monitoreo-cargadores-providencia'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Descargar la versión más reciente de main
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Configurar Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - name: Capturar datos públicos
+        run: python monitor_cloud.py
+      - name: Guardar la captura
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- datos/
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "datos: captura UTC $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          for intento in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            # El commit ya existe: ahora sí puede hacerse rebase sin cambios pendientes.
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
