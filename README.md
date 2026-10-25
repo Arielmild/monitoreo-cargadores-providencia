@@ -11,6 +11,10 @@ El segundo monitor consulta [cargadorespublicos.cl](https://cargadorespublicos.c
 
 Las instrucciones siguientes corresponden al monitor original de Dónde Cargo.
 
+## Exportación diaria para Power BI
+
+La [publicación para Power BI](powerbi/README.md) reúne los CSV de detalle de ambas fuentes por día de Chile, con un índice de URL fija y consultas listas para pegar en Power BI Desktop. La primera exportación correcta del workflow original después de las 00:10 de Chile publica los días cerrados pendientes mediante `exportar_datos.py --power-bi --si-pendiente`; aprovecha la activación de cron-job existente. Los CSV se guardan en `powerbi/` en el mismo repositorio. En Desktop se incorporan a los gráficos al pulsar **Actualizar**.
+
 ## Consultar o descargar los datos
 
 - [Última captura y estados](datos/estado_monitor.json).
@@ -35,11 +39,11 @@ La exportación puede repetirse sin duplicar datos. SQLite se genera al descarga
 
 ## Frecuencia, costo y controles
 
-El workflow `Monitoreo Cargadores Providencia` está programado cada cinco minutos, en los minutos UTC 02, 07, 12, …, 57 de cada hora. También se ejecuta al actualizar el monitor y con **Actions → Monitoreo Cargadores Providencia → Run workflow**. Los cambios automáticos en `datos/` no disparan otro ciclo.
+El workflow `Monitoreo Cargadores Providencia` se activa desde cron-job mediante `workflow_dispatch`. También se ejecuta al actualizar el monitor o el exportador y con **Actions → Monitoreo Cargadores Providencia → Run workflow**. Los cambios automáticos en `datos/` o `powerbi/` no disparan otro ciclo.
 
 Se usa un runner estándar `ubuntu-latest` en un repositorio público. GitHub establece que [estas ejecuciones son gratuitas](https://docs.github.com/en/billing/concepts/product-billing/github-actions). No se configuran servicios pagados. El monitor se omite si el repositorio se vuelve privado o se ejecuta en una copia de otra cuenta.
 
-GitHub [puede retrasar u omitir ejecuciones programadas](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule): cinco minutos es la frecuencia solicitada, no una garantía. En repositorios públicos puede desactivar el cron después de 60 días sin actividad; si ocurre, se reactiva desde Actions. No se añade un mecanismo artificial para eludir esa política.
+La frecuencia de activación la controla el servicio cron-job. Las marcas `observed_at` registran cuándo se realizó cada captura; no debe suponerse que todos los intervalos son exactamente iguales.
 
 Para detener la captura: **Actions → Monitoreo Cargadores Providencia → menú ⋯ → Disable workflow**. Los datos existentes se conservan. Para reanudar: **Enable workflow**.
 

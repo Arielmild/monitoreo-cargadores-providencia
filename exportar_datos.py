@@ -4,6 +4,7 @@ import argparse
 import csv
 import sqlite3
 from contextlib import closing
+from datetime import date
 from pathlib import Path
 
 from monitor_cloud import ROOT, STATION_FIELDS, STATION_HISTORY_FIELDS, SOCKET_HISTORY_FIELDS
@@ -53,5 +54,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=ROOT / "datos")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "exportaciones")
+    parser.add_argument("--power-bi", action="store_true", help="publicar días cerrados de ambas fuentes en powerbi/")
+    parser.add_argument("--si-pendiente", action="store_true", help="esperar a las 00:10 de Chile y evitar repetir el cierre")
+    parser.add_argument("--reconstruir-power-bi", action="store_true", help="reconstruir todo el historial publicado")
+    parser.add_argument("--cierre-hasta", type=date.fromisoformat, help="último día de Chile que se publicará (AAAA-MM-DD)")
     args = parser.parse_args()
-    export(args.data_dir, args.output_dir)
+    if args.power_bi:
+        from publicar_powerbi import publish
+        publish(ROOT, if_pending=args.si_pendiente, rebuild=args.reconstruir_power_bi, through=args.cierre_hasta)
+    else:
+        if args.si_pendiente or args.reconstruir_power_bi or args.cierre_hasta:
+            parser.error("Las opciones de cierre requieren --power-bi")
+        export(args.data_dir, args.output_dir)

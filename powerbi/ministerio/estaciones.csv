@@ -1,0 +1,51 @@
+﻿station_id,name,address,comuna,es_providencia,latitude,longitude,operator,n_conectores,max_power_kw
+116,Proyecto Cargadores VE Hotel Torre Mayor 25,Avenida Ricardo Lyon 25,Providencia,1,-33.42198,-70.609887,ENEL X,2,22.0
+117,Proyecto CE Hotel Torremayor 322,Avenida Ricardo Lyon 322,Providencia,1,-33.4246,-70.6085,ENEL X,2,22.0
+119,Proy. Instalación Cargadores Eléct. Hotel Eurotel,Guardia Vieja 285,Providencia,1,-33.4249,-70.6098,ENEL X,2,22.0
+120,Proyecto Cargadores VE Hotel Ritz Carlton,El Alcalde 15,Las Condes,0,-33.415898,-70.595236,Sin Operador Informado,1,22.0
+1232,Cargadores públicos mall Costanera Center,Av. Andres Bello 2425,Providencia,1,-33.417354,-70.607241,Enerlink Chile SpA,3,7.0
+1233,TEMOB - Boulevard Plaza Ñuñoa,Jorge Washington 111,Nunoa,0,-33.453482,-70.594017,TE MOBILITY,1,7.0
+1250,Enel X - EDS Aramco Eliodoro Yañez,Eliodoro Yañez 921,Providencia,1,-33.43378,-70.622934,ENEL X,4,60.0
+1300,SAVE VOLTEX BILBAO EDS 60419,AV FRANCISCO BILBAO 2682,Providencia,1,-33.43591,-70.595747,COPEC VOLTEX,2,240.0
+1303,edificio Deja Vu,Miguel claro 275,Providencia,1,-33.432162,-70.62054,Sin Operador Informado,2,22.0
+1329,IRVE Tottus Vicuña Mackena,Avenida Vicuña Mackenna N° 665,Santiago,0,-33.453037,-70.630796,ENEL X,3,60.0
+1331,SAVE VOLTEX BILBAO EDS 60419,AV FRANCISCO BILBAO 2682,Providencia,1,-33.43591,-70.595747,COPEC VOLTEX,2,240.0
+1355,"Enel X, Strip Center Manuel Montt",Manuel Montt 2222,Nunoa,0,-33.44815,-70.613397,ENEL X,14,150.0
+1356,Enel X-McDonald's Bilbao ,Avenida Francisco Bilbao 0103,Providencia,1,-33.442888,-70.630277,ENEL X,2,30.0
+1423,VOLTEX ISIDORA GOYENECHEA,ISIDORA GOYENECHEA 2915,Las Condes,0,-33.414307,-70.601293,Sin Operador Informado,6,7.4
+1523,Electrolinera ENEX Portugal 175 Santiago File 647,Portugal  175,Santiago,0,-33.444875,-70.636849,Enerlink Chile SpA,5,148.96
+1552,Electrolinera Aramco Francisco Bilbao,Antonio Varas  1492,Providencia,1,-33.43864,-70.614168,ENEL X,4,60.0
+185,Parking Saba Ricardo Lyon ,avenida providencia  2203,Providencia,1,-33.42187,-70.609795,ENEL X,3,7.0
+186,Parking Saba Guardia Vieja,Avenida providencia 2099,Providencia,1,-33.421301,-70.609047,ENEL X,3,7.0
+187,Parking Saba Pedro de Valdivia ,Avenida providencia 2001,Providencia,1,-33.423609,-70.612071,ENEL X,3,7.0
+188,Parking Saba Marchant Pereira,Avenida providencia 1909,Providencia,1,-33.425077,-70.61364,ENEL X,3,7.0
+202,SAVE LIDER IRARRAZAVAL,Avenida Irarrázaval  2928,Nunoa,0,-33.454321,-70.600441,Enerlink Chile SpA,2,24.0
+208,Enel X - Hotel NH Plaza Santiago,Avenida Vitacura 2610,Las Condes,0,-33.416491,-70.604961,ENEL X,2,7.4
+224,SAVE EXPRESS SANTA ISABEL,Santa Isabel  168,Providencia,1,-33.446787,-70.629315,Enerlink Chile SpA,2,24.0
+2315,COPEC VOLTEX - EDIFICIO MANUEL MONTT 1204,Manuel Montt 1204,Providencia,1,-33.43896,-70.615455,Sin Operador Informado,1,7.4
+2316,COPEC VOLTEX - EDIFICIO GRAND LYON,Avenida Ricardo Lyon 1096,Providencia,1,-33.431164,-70.605673,Sin Operador Informado,1,7.4
+248,IRVE EDIF. LOS MILITARES - CBRE,LOS MILITARES 4611,Las Condes,0,-33.412777,-70.582354,COPEC VOLTEX,2,22.0
+257,IRVE EDIFICIO SWITCH,AVENIDA AMERICO VESPUCIO SUR 345,Las Condes,0,-33.41832,-70.583356,COPEC VOLTEX,2,7.4
+284,IRVE Tottus Vicuña Mackena,Avenida Vicuña Mackena 885,Santiago,0,-33.453037,-70.630796,ENEL X,3,60.0
+29,Estadio Francés,Presidente Errazuriz N/A,Las Condes,0,-33.4212876441253,-70.5953049648924,Sin Operador Informado,2,22.0
+306,TE MOBILITY SpA - Punta Blanca ,AV IRARRAZAVAL  2899,Nunoa,0,-33.454713,-70.601041,Sin Operador Informado,2,22.0
+31,Presidente Errazuriz frente  al Nº 3753,Presidente Errazuriz N/A,Las Condes,0,-33.420269,-70.588459,Sin Operador Informado,2,44.0
+353,Enel X Way - MUT,Av. Apoquindo  2730,Las Condes,0,-33.417713,-70.600784,ENEL X,6,60.0
+36,Enel X - Presidente Errazuriz ,Avenida Presidente Errazuriz s/n,Las Condes,0,-33.41884715,-70.58370366,ENEL X,2,60.0
+396,TE MOBILITY SpA - EC Parking,Nueva Tajamar 555,Las Condes,0,-33.416002,-70.606177,Sin Operador Informado,2,22.0
+398,SAN EUGENIO,SAN EUGENIO FTE AL  20,Nunoa,0,-33.452619,-70.62825,COPEC VOLTEX,2,22.0
+403,Enex E-Pro Shell Portugal,Portugal  175,Santiago,0,-33.444858,-70.637198,EMPRESA NACIONAL DE ENERGIA EN,2,50.0
+41,Parque Metropolitano- Entrada Pedro de Valdivia,Pedro de Valdivia Norte  699,Providencia,1,-33.415328136766,-70.6173907758626,ENEL X,2,22.0
+413,DUBLÉ ALMEYDA,DUBLE ALMEYDA 2541,Nunoa,0,-33.455716,-70.603911,COPEC VOLTEX,2,22.0
+414,BROWN SUR,BROWN SUR  77,Nunoa,0,-33.455943,-70.592061,COPEC VOLTEX,2,22.0
+45,Automóvil Club Chile,Andr¿s Bello  1863,Providencia,1,-33.4229401662574,-70.6170100190318,Sin Operador Informado,2,7.0
+46,Estacionamientos EME,Isidora Goyenechea  2939,Las Condes,0,-33.4142246465419,-70.6002528221661,ENEL X,4,3.5
+48,Costanera Center,Andr¿s Bello  2461,Providencia,1,-33.4202965517751,-70.6112779362225,Sin Operador Informado,2,7.0
+53,Electrolinera-53,Avenida Francisco Bilbao  1439,Providencia,1,-33.43933682,-70.614507,Sin Operador Informado,1,7.0
+566,Estacionamientos Manuel Montt,Dr.Manuel barros borgoño 20,Providencia,1,-33.429434,-70.618955,ESTACIONAMIENTOS MANUEL MONTT SOCIEDAD CONCESIONARIA S.A.,4,7.4
+59,TOTTUS FACTORIA,AV. FRANCISCO BILBAO 451,Providencia,1,-33.441797,-70.626039,Sin Operador Informado,1,22.0
+714,Enel X - Hotel W,Isidora Goyenechea 3000,Las Condes,0,-33.41384,-70.598623,ENEL X,2,22.0
+74,Cargador Vehicular Hotel Intercontinental,Avenida Vitacura 2885,Las Condes,0,-33.412512,-70.602963,ENEL X,2,22.0
+94,Grupo Patio Foster,Enrique Foster 21,Las Condes,0,-33.415555,-70.59412,Sin Operador Informado,2,7.0
+97,Proyecto Inst. Cargadores Elect. Hotel Sheraton,Avenida Santa Maria 1742,Providencia,1,-33.421896,-70.621148,ENEL X,2,22.0
+99,Parque Metropolitano_Jardín Mapulemo,Pio Nono 450 p2,Recoleta,0,-33.4138292092178,-70.6208026331018,Sin Operador Informado,2,22.0
