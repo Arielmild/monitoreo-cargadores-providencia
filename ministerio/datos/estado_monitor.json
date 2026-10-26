@@ -1,7 +1,7 @@
 {
   "fuente": "https://cargadorespublicos.cl/api/data",
-  "observed_at": "2026-10-26T21:06:24+00:00",
-  "observed_at_cl": "2026-10-26T18:06:24-03:00",
+  "observed_at": "2026-10-26T21:08:23+00:00",
+  "observed_at_cl": "2026-10-26T18:08:23-03:00",
   "ubicaciones_consultadas": 677,
   "estaciones": 50,
   "conectores": 132,
