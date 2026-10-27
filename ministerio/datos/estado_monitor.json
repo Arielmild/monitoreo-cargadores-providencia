@@ -1,7 +1,7 @@
 {
   "fuente": "https://cargadorespublicos.cl/api/data",
-  "observed_at": "2026-10-27T23:18:32+00:00",
-  "observed_at_cl": "2026-10-27T20:18:32-03:00",
+  "observed_at": "2026-10-27T23:20:37+00:00",
+  "observed_at_cl": "2026-10-27T20:20:37-03:00",
   "ubicaciones_consultadas": 678,
   "estaciones": 50,
   "conectores": 132,
@@ -16,8 +16,8 @@
   },
   "estados": {
     "FUERA_DE_LINEA": 75,
-    "DISPONIBLE": 40,
-    "OCUPADO": 11,
+    "OCUPADO": 12,
+    "DISPONIBLE": 39,
     "NO_DISPONIBLE": 6
   },
   "solo_providencia": false,
