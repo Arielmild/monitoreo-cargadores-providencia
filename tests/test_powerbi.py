@@ -87,6 +87,26 @@ class PowerBITests(unittest.TestCase):
             publish(repo, now=datetime(2026, 10, 26, 4, tzinfo=timezone.utc), rebuild=True)
             self.assertEqual(before, {entry["ruta_relativa"]: entry["sha256"] for entry in self.entries(repo)})
 
+    def test_catchup_publish_recovers_pending_closed_days_without_duplicates(self):
+        with tempfile.TemporaryDirectory() as folder, redirect_stdout(io.StringIO()):
+            repo = Path(folder)
+            self.fixture(repo, ["2026-10-25T15:00:00+00:00", "2026-10-26T15:00:00+00:00"])
+            publish(repo, now=datetime(2026, 10, 27, 4, tzinfo=timezone.utc))
+            for _, _, directory, _, basename, local_names in HISTORIES:
+                timestamp = "2026-10-27T15:00:00+00:00"
+                observed = datetime.fromisoformat(timestamp)
+                day = observed.astimezone(TZ_CHILE).date() if local_names else observed.date()
+                path = repo / directory / (f"{day}.csv" if local_names else f"{day:%Y/%m}/{basename}_{day}.csv")
+                self.write_csv(path, ["observed_at", "station_id", "status", "note"],
+                               [{"observed_at": timestamp, "station_id": "001", "status": "AVAILABLE", "note": "pendiente"}])
+            state = publish(repo, now=datetime(2026, 10, 28, 4, tzinfo=timezone.utc))
+            self.assertEqual(state["cerrado_hasta"], "2026-10-27")
+            self.assertEqual(state["filas_nuevas"]["ministerio_historial_conectores"], 1)
+            for table, *_ in HISTORIES:
+                rows = self.table_rows(repo, table)
+                self.assertEqual(len(rows), 3)
+                self.assertEqual(len({(row["observed_at"], row["station_id"]) for row in rows}), 3)
+
     def test_failed_export_preserves_the_previous_published_index_and_state(self):
         with tempfile.TemporaryDirectory() as folder, redirect_stdout(io.StringIO()):
             repo = Path(folder)

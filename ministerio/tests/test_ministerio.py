@@ -67,9 +67,33 @@ class MinisterioTests(unittest.TestCase):
 
     def test_duplicate_connectors_are_rejected(self):
         duplicate = copy.deepcopy(self.location)
-        duplicate["evses"][0]["connectors"].append(duplicate["evses"][0]["connectors"][0])
-        with self.assertRaises(ValueError):
+        conflict = copy.deepcopy(duplicate["evses"][0]["connectors"][0])
+        conflict["status"] = "DISPONIBLE"
+        duplicate["evses"][0]["connectors"].append(conflict)
+        with self.assertRaisesRegex(ValueError, "Conector duplicado con conflicto"):
             procesar([duplicate], self.now)
+
+    def test_duplicate_location_id_merges_complementary_evses_without_duplicate_rows(self):
+        first = copy.deepcopy(self.location)
+        first["evses"][0]["connectors"] = [first["evses"][0]["connectors"][0]]
+        second = copy.deepcopy(self.location)
+        second["evses"][0]["connectors"] = [second["evses"][0]["connectors"][1]]
+        second["evses"].append({
+            "evse_uid": 21, "evse_id": "EVSE-21", "status": "DISPONIBLE",
+            "connectors": [{"connector_id": 40, "status": "DISPONIBLE", "standard": "Type 2", "max_electric_power": 22, "tariffs": []}],
+        })
+        rows, stations = procesar([first, second], self.now)
+        self.assertEqual(len(rows), 3)
+        self.assertEqual(len({row["connector_key"] for row in rows}), 3)
+        self.assertEqual(stations[0]["n_conectores"], 3)
+        self.assertEqual(stations[0]["max_power_kw"], 60)
+
+    def test_duplicate_location_id_with_conflicting_metadata_is_rejected(self):
+        first = copy.deepcopy(self.location)
+        second = copy.deepcopy(self.location)
+        second["coordinates"]["latitude"] = "-33.44"
+        with self.assertRaisesRegex(ValueError, "Conflicto en station 10 para latitude"):
+            procesar([first, second], self.now)
 
     def test_storage_and_sqlite_stay_in_the_ministry_directory(self):
         with tempfile.TemporaryDirectory() as folder, redirect_stdout(io.StringIO()):
