@@ -70,6 +70,19 @@ def normalizar_estado(value):
     return "DESCONOCIDO"
 
 
+def merge_station(existing, incoming, station_id):
+    for field in ("name", "address", "comuna", "es_providencia", "latitude", "longitude", "operator"):
+        previous = existing.get(field)
+        current = incoming.get(field)
+        if previous in (None, "") and current not in (None, ""):
+            existing[field] = current
+            continue
+        if current in (None, ""):
+            continue
+        if previous != current:
+            raise ValueError(f"Conflicto en station {station_id} para {field}: {previous!r} != {current!r}")
+
+
 def crear_sesion():
     session = requests.Session()
     retries = Retry(total=2, backoff_factor=1, allowed_methods=("GET",),
@@ -82,7 +95,7 @@ def crear_sesion():
 def procesar(payload, observed_at, solo_providencia=False):
     if not isinstance(payload, list) or not payload or not all(isinstance(item, dict) for item in payload):
         raise ValueError("La API debe entregar una lista no vacía de ubicaciones")
-    stations, observations, seen = {}, [], set()
+    stations, observations, observation_by_key = {}, [], {}
     timestamp = observed_at.isoformat(timespec="seconds")
     local_timestamp = observed_at.astimezone(TZ_CL).isoformat(timespec="seconds")
     for location in payload:
@@ -102,16 +115,19 @@ def procesar(payload, observed_at, solo_providencia=False):
         if location_id in (None, ""):
             raise ValueError("Ubicación de la zona sin location_id")
         station_id = str(location_id)
-        if station_id in stations:
-            raise ValueError(f"location_id duplicado: {station_id}")
         operator = location.get("OPC") or {}
         if not isinstance(operator, dict):
             raise ValueError("OPC dejó de ser un objeto")
         operator_name = operator.get("normalized_name") or operator.get("name")
-        station = dict(station_id=station_id, name=location.get("name"), address=location.get("address"),
-                       comuna=commune, es_providencia=providencia, latitude=lat, longitude=lon,
-                       operator=operator_name, n_conectores=0, max_power_kw=None)
-        stations[station_id] = station
+        incoming_station = dict(station_id=station_id, name=location.get("name"), address=location.get("address"),
+                                comuna=commune, es_providencia=providencia, latitude=lat, longitude=lon,
+                                operator=operator_name)
+        station = stations.get(station_id)
+        if station is None:
+            station = dict(incoming_station, n_conectores=0, max_power_kw=None)
+            stations[station_id] = station
+        else:
+            merge_station(station, incoming_station, station_id)
         evses = location.get("evses")
         if not isinstance(evses, list):
             raise ValueError(f"La ubicación {station_id} no contiene una lista evses")
@@ -127,9 +143,6 @@ def procesar(payload, observed_at, solo_providencia=False):
                 connector_id = str(connector["connector_id"])
                 # Los tres identificadores proceden de la fuente y no dependen del orden de la lista.
                 key = f"{station_id}:{evse_uid}:{connector_id}"
-                if key in seen:
-                    raise ValueError(f"Conector duplicado: {key}")
-                seen.add(key)
                 power = a_float(connector.get("max_electric_power"))
                 updated_at, updated_level = None, ""
                 for item, level in ((connector, "connector"), (evse, "evse"), (location, "location")):
@@ -143,7 +156,7 @@ def procesar(payload, observed_at, solo_providencia=False):
                 tariff_fields = ("tariff_id", "last_updated", "min_price", "max_price", "pse_id", "elements")
                 safe_tariffs = [{field: tariff[field] for field in tariff_fields if field in tariff}
                                 for tariff in tariffs if isinstance(tariff, dict)]
-                observations.append(dict(
+                row = dict(
                     observed_at=timestamp, observed_at_cl=local_timestamp, connector_key=key,
                     connector_id=connector_id, station_id=station_id, evse_uid=str(evse_uid),
                     evse_id=evse.get("evse_id"), status=normalizar_estado(connector.get("status")),
@@ -154,10 +167,16 @@ def procesar(payload, observed_at, solo_providencia=False):
                     source_updated_at=updated_at, source_updated_at_level=updated_level,
                     location_updated_at=location.get("last_updated"),
                     tariffs_json=json.dumps(safe_tariffs, ensure_ascii=False, sort_keys=True, separators=(",", ":")),
-                ))
-                station["n_conectores"] += 1
-                if power is not None:
-                    station["max_power_kw"] = max(power, station["max_power_kw"] or 0)
+                )
+                previous_row = observation_by_key.get(key)
+                if previous_row is None:
+                    observation_by_key[key] = row
+                    observations.append(row)
+                    station["n_conectores"] += 1
+                    if power is not None:
+                        station["max_power_kw"] = max(power, station["max_power_kw"] or 0)
+                elif previous_row != row:
+                    raise ValueError(f"Conector duplicado con conflicto: {key}")
     if not observations:
         raise ValueError("La API no entregó conectores utilizables en la zona; no se guardó la captura")
     observations.sort(key=lambda row: row["connector_key"])
