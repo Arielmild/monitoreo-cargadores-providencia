@@ -1,7 +1,7 @@
 {
-  "observed_at": "2026-11-01T01:21:09.880438+00:00",
-  "consulta_iniciada_utc": "2026-11-01T01:21:06.320656+00:00",
-  "duracion_consulta_segundos": 3.56,
+  "observed_at": "2026-11-01T01:26:05.564005+00:00",
+  "consulta_iniciada_utc": "2026-11-01T01:26:03.381098+00:00",
+  "duracion_consulta_segundos": 2.183,
   "estaciones": 77,
   "conectores": 117,
   "conectores_consultados_total": 2384,
@@ -22,7 +22,8 @@
     "OCCUPIED": 4,
     "PAUSED": 1,
     "FAULTED": 11,
-    "PREPARING": 2
+    "PREPARING": 1,
+    "FINISHING": 1
   },
   "estaciones_sin_conectores_vinculados": [
     "376"
