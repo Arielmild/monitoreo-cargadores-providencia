@@ -1,7 +1,7 @@
 {
-  "observed_at": "2026-11-04T21:22:04.830078+00:00",
-  "consulta_iniciada_utc": "2026-11-04T21:22:03.359519+00:00",
-  "duracion_consulta_segundos": 1.471,
+  "observed_at": "2026-11-04T21:26:57.082598+00:00",
+  "consulta_iniciada_utc": "2026-11-04T21:26:54.380795+00:00",
+  "duracion_consulta_segundos": 2.702,
   "estaciones": 77,
   "conectores": 118,
   "conectores_consultados_total": 2385,
@@ -17,12 +17,13 @@
   },
   "estados_conectores": {
     "OUTOFSERVICE": 13,
-    "AVAILABLE": 77,
+    "AVAILABLE": 78,
     "UNKNOWN": 4,
-    "CHARGING": 11,
+    "CHARGING": 9,
     "PAUSED": 1,
     "OCCUPIED": 5,
-    "FAULTED": 7
+    "FAULTED": 7,
+    "PREPARING": 1
   },
   "estaciones_sin_conectores_vinculados": [],
   "fuente": "https://dondecargo.cl/",
