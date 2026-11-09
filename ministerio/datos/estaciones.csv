@@ -26,7 +26,7 @@ station_id,name,address,comuna,es_providencia,latitude,longitude,operator,n_cone
 2316,COPEC VOLTEX - EDIFICIO GRAND LYON,Avenida Ricardo Lyon 1096,Providencia,1,-33.431164,-70.605673,Sin Operador Informado,1,7.4
 248,IRVE EDIF. LOS MILITARES - CBRE,LOS MILITARES 4611,Las Condes,0,-33.412777,-70.582354,COPEC VOLTEX,2,22.0
 257,IRVE EDIFICIO SWITCH,AVENIDA AMERICO VESPUCIO SUR 345,Las Condes,0,-33.41832,-70.583356,COPEC VOLTEX,2,7.4
-284,IRVE Tottus Vicuña Mackena,Avenida Vicuña Mackena 885,Santiago,0,-33.453037,-70.630796,ENEL X,3,60.0
+284,IRVE Tottus Vicuña Mackena,Avenida Vicuña Mackena 885,Santiago,0,-33.453037,-70.630796,ENEL X,2,60.0
 29,Estadio Francés,Presidente Errazuriz N/A,Las Condes,0,-33.4212876441253,-70.5953049648924,Sin Operador Informado,2,22.0
 306,TE MOBILITY SpA - Punta Blanca ,AV IRARRAZAVAL  2899,Nunoa,0,-33.454713,-70.601041,Sin Operador Informado,2,22.0
 31,Presidente Errazuriz frente  al Nº 3753,Presidente Errazuriz N/A,Las Condes,0,-33.420269,-70.588459,Sin Operador Informado,2,44.0
