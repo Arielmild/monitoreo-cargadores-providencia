@@ -1,7 +1,7 @@
 {
-  "observed_at": "2026-11-11T11:12:48.302630+00:00",
-  "consulta_iniciada_utc": "2026-11-11T11:12:45.697238+00:00",
-  "duracion_consulta_segundos": 2.605,
+  "observed_at": "2026-11-11T11:17:50.536790+00:00",
+  "consulta_iniciada_utc": "2026-11-11T11:17:48.023681+00:00",
+  "duracion_consulta_segundos": 2.513,
   "estaciones": 77,
   "conectores": 118,
   "conectores_consultados_total": 2378,
@@ -17,10 +17,10 @@
   },
   "estados_conectores": {
     "OUTOFSERVICE": 13,
-    "AVAILABLE": 80,
+    "AVAILABLE": 81,
     "UNKNOWN": 6,
     "OCCUPIED": 2,
-    "CHARGING": 8,
+    "CHARGING": 7,
     "FAULTED": 9
   },
   "estaciones_sin_conectores_vinculados": [],
