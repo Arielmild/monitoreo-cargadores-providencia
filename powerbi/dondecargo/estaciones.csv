@@ -1,6 +1,7 @@
 ﻿station_id,id_uuid,name,provider_id,address,es_providencia,latitude,longitude,power_kw,is_fast,min_price,copec_id,operator_id
 370,011c7104-29a8-4b6b-8a01-1285e3c8346c,Scotiabank Torre Parque Titanium,COPEC,"Costanera sur 2710, Las Condes, Santiago",0,-33.4141973,-70.6060996,,0,,"[4298, 4299, 4300]",
 xcpi-632,01ea7970-38b4-4703-adbf-b432fb7d2a23,SABA Ricado Lyon,EVX,"Av. Providencia 2269, 7500000 Providencia,",1,-33.421789,-70.609681,4,0,339,null,
+22XK11T2J03BB01861,0526e483-551a-488b-9df4-a94c644455dd,Enel X - Hotel W Santiago 1,ENELX,,,-33.4142741,-70.5982235,7,0,,null,ENELX
 xcpi-813,083f9320-deec-4bad-8493-84dc93ed8494,21XK11T2J03BB02149,EVX,"Av Vitacura 2885, 7550000 Las Condes, Región",0,-33.41264,-70.60291,,0,,null,
 xcpi-786,0ed7dfc9-6009-4e6c-bb78-44b2c4f9c0a7,C6E06BCC23WASNMKBF,EVX,"Pdte Errázuriz 4331, 7550225 Las Condes,",0,-33.418688,-70.583663,,0,,null,
 341,10678a81-86cb-4e82-8d2a-de3679884821,60419 - Bilbao,COPEC,"Avenida Francisco Bilbao N°2682, Providencia",1,-33.4359101,-70.5957467,,1,,[4199],
@@ -34,6 +35,7 @@ xcpi-383,5a5ad2e2-faaa-46fd-b474-2a4377ab7d58,SABA Guarda Vieja,EVX,"Nueva Provi
 C6E06BCC23WASNMKBF,5f7998a4-219e-4524-821b-d708f486a7a5,Las Condes - Presidente Errazuriz con Asturias,ENELX,,,-33.4186883,-70.5836628,40,1,,null,ENELX
 24XK11T2J03BB00050,616eade4-13c2-438c-b770-b90e86f01ded,Estacionamiento Eme 1,ENELX,,,-33.4144622,-70.6005179,4.378,0,,null,ENELX
 22XK11T2J03BB01568,61844762-296b-4e7a-b603-2f13bceb52b9,Saba Pedro de Valdivia 1,ENELX,,,-33.4232066,-70.6116104,7.004,0,,null,ENELX
+407,643d77e0-1441-400e-977f-d29bcee7170d,Edificio Manuel Montt 1204,COPEC,,,-33.4389604,-70.615455,,0,,[4372],
 396,65523a07-73c7-419d-8a9f-9a3d9949b939,Pocuro 2260,COPEC,"Pocuro 2260, Providencia, Providencia",1,-33.4349134,-70.6038232,,0,,[4357],
 xcpi-607,696af238-369d-40fc-84f1-c4b3c29f3505,Estacionamiento EME,EVX,"Isidora Goyenechea 2939, Las Condes, Región",0,-33.414143,-70.600207,6,0,339,null,
 21XK11T2J03BB02217,6bc3a2a3-9234-4d36-9e5f-2d83d3a77c0f,Saba Ricardo Lyon 2,ENELX,,,-33.4217885,-70.6096811,6.688,0,,null,ENELX
@@ -56,7 +58,6 @@ xcpi-779,9b066faa-83f6-4fb1-840a-aee1dbc54f3d,C6E06BCC22SXRNPUQN,EVX,"H98G+CQ2, 
 C6E06BCC22SXRNPUQN,9b519a8d-7209-429c-978f-0c1b974e4101,Aramco Eliodoro Yanez 02,ENELX,,,-33.4339875,-70.6231094,60,1,,null,ENELX
 123,9c55b5d5-f60a-480d-ba0c-bd26409f2ad3,Apoquindo 2929 - solo residentes y visitas,COPEC,"Apoquindo 2929, Santiago",,-33.4178638,-70.5990465,7,0,415,"[4256, 4257]",
 358,9ef87ed7-4f0c-44b2-8159-26efb4ff6327,Edificio CCU,COPEC,"Vitacura 2670, Vitacura",0,-33.4157879,-70.6047562,,0,,"[4240, 4241, 4242]",
-xcpi-703,a26137a1-f3ed-49e0-b794-cb15b1cfc5ec,Hotel W,EVX,"Isidora Goyenechea 3000, 6760215 Santiago,",,-33.41384,-70.598623,7,0,339,null,
 xcpi-778,a2f197f5-0a95-4a87-91fa-5a2b840e6cdd,C6E06BCC23THGLEBVL,EVX,"José Manuel Infante 263, 7500717",,-33.434065,-70.623295,60,0,339,null,
 xcpi-840,a4669129-1a4a-4d41-83c7-960bb87c88bd,C6E06BCC22VAVABSDT,EVX,"H96P+98X Providencia, Chile",1,-33.439013,-70.614141,,0,,null,
 23XK11T2J03BB00443,a9ec50f0-93bf-43d7-b1c5-eff7ab5466ff,Enel X - Hotel W Santiago 1,ENELX,,,-33.4138403,-70.5986232,7.004,0,,null,ENELX
@@ -75,4 +76,5 @@ xcpi-595,e6a717cc-c880-45a9-8568-bb778552d2ee,SABA Guarda Vieja,EVX,"Nueva Provi
 xcpi-299,ea457812-7a49-4304-b2b5-3e8f4d8bcb8e,SABA Marchant Pereira,EVX,"Av. Providencia 1971, 7500000 Providencia,",1,-33.42382,-70.612624,4,0,339,null,
 23XK11T2J03BB00486,f1cd8b3e-c9e9-4672-a10f-ce7e1ed76437,Enel X - Hotel W Santiago 2,ENELX,,,-33.4138403,-70.5986232,7.004,0,,null,ENELX
 154,f22b3493-d614-4446-bf9f-3718817f091b,Edificio SWITCH,COPEC,"Av. Américo Vespucio Sur N° 345, Las Condes, Santiago",0,-33.417343,-70.583611,7,0,415,"[425, 426]",
+xcpi-855,f6681d58-eb54-4663-991b-ee3624932287,22XK11T2J03BB01861,EVX,"Isidora Goyenechea 3000, 7550653 Santiago,",,-33.414274,-70.598224,,0,,null,
 xcpi-289,f9349035-47b6-4875-b01b-53087ee9005b,SABA Marchant Pereira,EVX,"Av. Providencia 1971, 7500000 Providencia,",1,-33.42382,-70.612624,5,0,339,null,
