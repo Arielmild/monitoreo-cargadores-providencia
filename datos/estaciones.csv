@@ -56,7 +56,6 @@ xcpi-779,9b066faa-83f6-4fb1-840a-aee1dbc54f3d,C6E06BCC22SXRNPUQN,EVX,"H98G+CQ2, 
 C6E06BCC22SXRNPUQN,9b519a8d-7209-429c-978f-0c1b974e4101,Aramco Eliodoro Yanez 02,ENELX,,,-33.4339875,-70.6231094,60,1,,null,ENELX
 123,9c55b5d5-f60a-480d-ba0c-bd26409f2ad3,Apoquindo 2929 - solo residentes y visitas,COPEC,"Apoquindo 2929, Santiago",,-33.4178638,-70.5990465,7,0,415,"[4256, 4257]",
 358,9ef87ed7-4f0c-44b2-8159-26efb4ff6327,Edificio CCU,COPEC,"Vitacura 2670, Vitacura",0,-33.4157879,-70.6047562,,0,,"[4240, 4241, 4242]",
-xcpi-703,a26137a1-f3ed-49e0-b794-cb15b1cfc5ec,Hotel W,EVX,"Isidora Goyenechea 3000, 6760215 Santiago,",,-33.41384,-70.598623,7,0,339,null,
 xcpi-778,a2f197f5-0a95-4a87-91fa-5a2b840e6cdd,C6E06BCC23THGLEBVL,EVX,"José Manuel Infante 263, 7500717",,-33.434065,-70.623295,60,0,339,null,
 xcpi-840,a4669129-1a4a-4d41-83c7-960bb87c88bd,C6E06BCC22VAVABSDT,EVX,"H96P+98X Providencia, Chile",1,-33.439013,-70.614141,,0,,null,
 23XK11T2J03BB00443,a9ec50f0-93bf-43d7-b1c5-eff7ab5466ff,Enel X - Hotel W Santiago 1,ENELX,,,-33.4138403,-70.5986232,7.004,0,,null,ENELX
@@ -75,4 +74,5 @@ xcpi-595,e6a717cc-c880-45a9-8568-bb778552d2ee,SABA Guarda Vieja,EVX,"Nueva Provi
 xcpi-299,ea457812-7a49-4304-b2b5-3e8f4d8bcb8e,SABA Marchant Pereira,EVX,"Av. Providencia 1971, 7500000 Providencia,",1,-33.42382,-70.612624,4,0,339,null,
 23XK11T2J03BB00486,f1cd8b3e-c9e9-4672-a10f-ce7e1ed76437,Enel X - Hotel W Santiago 2,ENELX,,,-33.4138403,-70.5986232,7.004,0,,null,ENELX
 154,f22b3493-d614-4446-bf9f-3718817f091b,Edificio SWITCH,COPEC,"Av. Américo Vespucio Sur N° 345, Las Condes, Santiago",0,-33.417343,-70.583611,7,0,415,"[425, 426]",
+xcpi-855,f6681d58-eb54-4663-991b-ee3624932287,22XK11T2J03BB01861,EVX,"Isidora Goyenechea 3000, 7550653 Santiago,",,-33.414274,-70.598224,,0,,null,
 xcpi-289,f9349035-47b6-4875-b01b-53087ee9005b,SABA Marchant Pereira,EVX,"Av. Providencia 1971, 7500000 Providencia,",1,-33.42382,-70.612624,5,0,339,null,
