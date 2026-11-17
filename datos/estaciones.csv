@@ -1,7 +1,7 @@
 station_id,id_uuid,name,provider_id,address,es_providencia,latitude,longitude,power_kw,is_fast,min_price,copec_id,operator_id
 370,011c7104-29a8-4b6b-8a01-1285e3c8346c,Scotiabank Torre Parque Titanium,COPEC,"Costanera sur 2710, Las Condes, Santiago",0,-33.4141973,-70.6060996,,0,,"[4298, 4299, 4300]",
 xcpi-632,01ea7970-38b4-4703-adbf-b432fb7d2a23,SABA Ricado Lyon,EVX,"Av. Providencia 2269, 7500000 Providencia,",1,-33.421789,-70.609681,4,0,339,null,
-22XK11T2J03BB01861,0526e483-551a-488b-9df4-a94c644455dd,Enel X 22XK11T2J03BB01861,ENELX,,,-33.4142741,-70.5982235,,0,,null,ENELX
+22XK11T2J03BB01861,0526e483-551a-488b-9df4-a94c644455dd,Enel X - Hotel W Santiago 1,ENELX,,,-33.4142741,-70.5982235,7,0,,null,ENELX
 xcpi-813,083f9320-deec-4bad-8493-84dc93ed8494,21XK11T2J03BB02149,EVX,"Av Vitacura 2885, 7550000 Las Condes, Región",0,-33.41264,-70.60291,,0,,null,
 xcpi-786,0ed7dfc9-6009-4e6c-bb78-44b2c4f9c0a7,C6E06BCC23WASNMKBF,EVX,"Pdte Errázuriz 4331, 7550225 Las Condes,",0,-33.418688,-70.583663,,0,,null,
 341,10678a81-86cb-4e82-8d2a-de3679884821,60419 - Bilbao,COPEC,"Avenida Francisco Bilbao N°2682, Providencia",1,-33.4359101,-70.5957467,,1,,[4199],
