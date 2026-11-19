@@ -1,7 +1,7 @@
 {
-  "observed_at": "2026-11-19T19:43:35.329611+00:00",
-  "consulta_iniciada_utc": "2026-11-19T19:43:32.511945+00:00",
-  "duracion_consulta_segundos": 2.818,
+  "observed_at": "2026-11-19T19:48:21.116777+00:00",
+  "consulta_iniciada_utc": "2026-11-19T19:48:17.608734+00:00",
+  "duracion_consulta_segundos": 3.508,
   "estaciones": 79,
   "conectores": 119,
   "conectores_consultados_total": 2386,
@@ -24,8 +24,7 @@
     "PAUSED": 1,
     "FAULTED": 4,
     "UNAVAILABLE": 2,
-    "PREPARING": 1,
-    "FINISHING": 1
+    "PREPARING": 2
   },
   "estaciones_sin_conectores_vinculados": [
     "xcpi-299"
