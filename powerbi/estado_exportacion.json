@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "generado_utc": "2026-11-19T03:13:59.599034+00:00",
-  "generado_chile": "2026-11-19T00:13:59.599034-03:00",
-  "cerrado_hasta": "2026-11-18",
+  "generado_utc": "2026-11-20T03:13:11.945922+00:00",
+  "generado_chile": "2026-11-20T00:13:11.945922-03:00",
+  "cerrado_hasta": "2026-11-19",
   "zona_horaria": "America/Santiago",
   "filas_por_tabla": {
-    "dondecargo_estaciones": 79,
-    "dondecargo_historial_conectores": 854641,
-    "dondecargo_historial_estaciones": 559525,
+    "dondecargo_estaciones": 78,
+    "dondecargo_historial_conectores": 888941,
+    "dondecargo_historial_estaciones": 582163,
     "ministerio_estaciones": 50,
-    "ministerio_historial_conectores": 2037764
+    "ministerio_historial_conectores": 2091343
   },
   "filas_nuevas": {
-    "dondecargo_historial_estaciones": 22594,
-    "dondecargo_historial_conectores": 34320,
-    "ministerio_historial_conectores": 54496
+    "dondecargo_historial_estaciones": 22638,
+    "dondecargo_historial_conectores": 34300,
+    "ministerio_historial_conectores": 53579
   },
-  "archivos": 80,
+  "archivos": 83,
   "nota_catalogos": "Catálogos actuales al exportar; los historiales contienen solo días cerrados"
 }
