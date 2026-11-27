@@ -1,7 +1,7 @@
 {
-  "observed_at": "2026-11-27T05:43:48.124092+00:00",
-  "consulta_iniciada_utc": "2026-11-27T05:43:45.144345+00:00",
-  "duracion_consulta_segundos": 2.98,
+  "observed_at": "2026-11-27T05:48:58.569101+00:00",
+  "consulta_iniciada_utc": "2026-11-27T05:48:55.216497+00:00",
+  "duracion_consulta_segundos": 3.353,
   "estaciones": 77,
   "conectores": 118,
   "conectores_consultados_total": 2394,
